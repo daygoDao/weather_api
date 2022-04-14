@@ -13,6 +13,8 @@ const getWeather = async () => {
 
 const outputDOM = (weather) => {
     document.querySelector('.locationName').textContent = weather.name;
+    document.querySelector('.locationStatus').textContent = weather.weather[0].main;
+    document.querySelector('.locationTemp').textContent = `${weather.main.temp} ℃`;
 }
 
 document.querySelector(".findWeather").addEventListener("click", getWeather);
